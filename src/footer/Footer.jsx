@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="inner">
                 <div className="as-wrap">
                     <div className='logo'>
-                        <img src="../images/logo.svg" alt="logo" />
+                        <img src="./images/logo.svg" alt="logo" />
                     </div>
                     <div className="site">
                         <p>기업소개</p>
