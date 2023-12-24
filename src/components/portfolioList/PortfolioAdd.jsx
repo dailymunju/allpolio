@@ -20,31 +20,31 @@ const PortfolioAdd = ({setIsOpen , isOpen}) => {
                <div className="con1">
                 <p>
                     <input type="radio" name="" id="" />
-                    <img src="/images/portImg/andro01.png" alt="" />
+                    <img src="./images/portImg/andro01.png" alt="" />
                 </p>
                 <p>
                     <input type="radio" name="" id="" />
-                    <img src="/images/portImg/andro02.png" alt="" />
+                    <img src="./images/portImg/andro02.png" alt="" />
                 </p>
                 <p>
                     <input type="radio" name="" id="" />
-                    <img src="/images/portImg/andro03.png" alt="" />
+                    <img src="./images/portImg/andro03.png" alt="" />
                 </p>
                 <p>
                     <input type="radio" name="" id="" />
-                    <img src="/images/portImg/andro04.png" alt="" />
+                    <img src="./images/portImg/andro04.png" alt="" />
                 </p>
                 <p>
                     <input type="radio" name="" id="" />
-                    <img src="/images/portImg/andro05.png" alt="" />
+                    <img src="./images/portImg/andro05.png" alt="" />
                 </p>
                 <p>
                     <input type="radio" name="" id="" />
-                    <img src="/images/portImg/andro06.png" alt="" />
+                    <img src="./images/portImg/andro06.png" alt="" />
                 </p>
                 <p>
                     <input type="radio" name="" id="" />
-                    <img src="/images/portImg/andro07.png" alt="" />
+                    <img src="./images/portImg/andro07.png" alt="" />
                 </p>
                </div>
                <h3>프로젝트 명</h3>

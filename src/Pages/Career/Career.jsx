@@ -25,6 +25,7 @@ const Career = () => {
     const [loc, setLoc] = useState(location)
     useEffect(()=>{
         dispatch(changeLoc('careerPage'))
+        window.scrollTo(0,0);
     },[])
     
     const openPopup=()=>[

@@ -11,9 +11,9 @@ import Content3 from "../../components/main/Content3";
 import Content4 from "../../components/main/Content4";
 const Home = () => {
     const [swiperRef, setSwiperRef] = useState(null);
-    /* useEffect(() => {
+    useEffect(() => {
         window.scrollTo(0,0);
-    }, []) */
+    }, [])
     return (
         <>
             <VisualWrap>

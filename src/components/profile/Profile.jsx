@@ -5,7 +5,7 @@ const Profile = () => {
     return (
         <ProfileWrap>
             <div className="img-box">
-                <img src="/images/portImg/andro04.png" alt="" />
+                <img src="./images/portImg/andro04.png" alt="" />
             </div>
             <p className="nickname">닉네임</p>
             <p className="info">
