@@ -1,7 +1,7 @@
 export const socialData = [
     {
         id: 2,
-        image: "/images/social/social01_front.png",
+        image: "./images/social/social01_front.png",
         nick: "김하성",
         title: "FE 개발자로 폭발적 성장! 드루와~",
         isOn: false,
@@ -9,9 +9,9 @@ export const socialData = [
         detail: [
             {
                 id: 2,
-                img1: "/images/social/social01Detail_front.png",
-                img2: "/images/social/social01Detail1_front.png",
-                img3: "/images/social/social01Detail2_front.png",
+                img1: "./images/social/social01Detail_front.png",
+                img2: "./images/social/social01Detail1_front.png",
+                img3: "./images/social/social01Detail2_front.png",
                 desc: [
                     {
                         id: 2,
@@ -28,7 +28,7 @@ export const socialData = [
     },
     {
         id: 3,
-        image: "/images/social/social51_back.png",
+        image: "./images/social/social51_back.png",
         nick: "Jeremy",
         title: "백엔드 개발자로 사는 법!",
         isOn: false,
@@ -36,9 +36,9 @@ export const socialData = [
         detail: [
             {
                 id: 3,
-                img1: "/images/social/social51Detail_back.png",
-                img2: "/images/social/social51Detail1_back.png",
-                img3: "/images/social/social51Detail2_back.png",
+                img1: "./images/social/social51Detail_back.png",
+                img2: "./images/social/social51Detail1_back.png",
+                img3: "./images/social/social51Detail2_back.png",
                 desc: [
                     {
                         id: 3,
@@ -55,7 +55,7 @@ export const socialData = [
     },
     {
         id: 4,
-        image: "/images/social/social39-game.png",
+        image: "./images/social/social39-game.png",
         nick: "SWL",
         title: "자유로운 R&D 환경에서 개발 가능!",
         isOn: false,
@@ -63,9 +63,9 @@ export const socialData = [
         detail: [
             {
                 id: 4,
-                img1: "/images/social/social39Detail-game.png",
-                img2: "/images/social/social39Detail1-game.png",
-                img3: "/images/social/social39Detail2-game.png",
+                img1: "./images/social/social39Detail-game.png",
+                img2: "./images/social/social39Detail1-game.png",
+                img3: "./images/social/social39Detail2-game.png",
                 desc: [
                     {
                         id: 4,
@@ -82,7 +82,7 @@ export const socialData = [
     },
     {
         id: 5,
-        image: "/images/social/social41-app.png",
+        image: "./images/social/social41-app.png",
         nick: "최재원",
         title: "차세대 IT 플랫폼 '개인 맞춤형 건강 포털' 앱 개발을 담당하고 있어요",
         isOn: false,
@@ -90,9 +90,9 @@ export const socialData = [
         detail: [
             {
                 id: 5,
-                img1: "/images/social/social41Detail-app.png",
-                img2: "/images/social/social41Detail1-app.png",
-                img3: "/images/social/social41Detail2-app.png",
+                img1: "./images/social/social41Detail-app.png",
+                img2: "./images/social/social41Detail1-app.png",
+                img3: "./images/social/social41Detail2-app.png",
                 desc: [
                     {
                         id: 5,
@@ -109,7 +109,7 @@ export const socialData = [
     },
     {
         id: 6,
-        image: "/images/social/social26_full.png",
+        image: "./images/social/social26_full.png",
         nick: "백지혜",
         title: "육아휴직에서 돌아온 워킹맘의 개발자 컴백",
         isOn: false,
@@ -117,9 +117,9 @@ export const socialData = [
         detail: [
             {
                 id: 6,
-                img1: "/images/social/social26Detail_full.png",
-                img2: "/images/social/social26Detail1_full.png",
-                img3: "/images/social/social26Detail2_full.png",
+                img1: "./images/social/social26Detail_full.png",
+                img2: "./images/social/social26Detail1_full.png",
+                img3: "./images/social/social26Detail2_full.png",
                 desc: [
                     {
                         id: 6,
@@ -136,7 +136,7 @@ export const socialData = [
     },
     {
         id: 7,
-        image: "/images/social/social36-andro.png",
+        image: "./images/social/social36-andro.png",
         nick: "송승연",
         title: "커뮤니케이션 가치 UP! 플레이키보드 Android 앱을 담당하는 송승연 개발자",
         isOn: false,
@@ -144,9 +144,9 @@ export const socialData = [
         detail: [
             {
                 id: 7,
-                img1: "/images/social/social36Detail-andro.png",
-                img2: "/images/social/social36Detail2-andro.png",
-                img3: "/images/social/social36Detail2-andro.png",
+                img1: "./images/social/social36Detail-andro.png",
+                img2: "./images/social/social36Detail2-andro.png",
+                img3: "./images/social/social36Detail2-andro.png",
                 desc: [
                     {
                         id: 7,
@@ -163,7 +163,7 @@ export const socialData = [
     },
     {
         id: 8,
-        image: "/images/social/social38-ios.png",
+        image: "./images/social/social38-ios.png",
         nick: "고원지",
         title: "숙련된 iOS개발자 선배님의 개발이야기의 업무 꿀팁!",
         isOn: false,
@@ -171,9 +171,9 @@ export const socialData = [
         detail: [
             {
                 id: 8,
-                img1: "/images/social/social38Detail-ios.png",
-                img2: "/images/social/social38Detail1-ios.png",
-                img3: "/images/social/social38Detail2-ios.png",
+                img1: "./images/social/social38Detail-ios.png",
+                img2: "./images/social/social38Detail1-ios.png",
+                img3: "./images/social/social38Detail2-ios.png",
                 desc: [
                     {
                         id: 8,
@@ -190,7 +190,7 @@ export const socialData = [
     },
     {
         id: 9,
-        image: "/images/social/social43-sw.png",
+        image: "./images/social/social43-sw.png",
         nick: "함선경",
         title: "성공하는 S/W개발자의 모든 것!",
         isOn: false,
@@ -198,9 +198,9 @@ export const socialData = [
         detail: [
             {
                 id: 9,
-                img1: "/images/social/social43Detail-sw.png",
-                img2: "/images/social/social43Detail1-sw.png",
-                img3: "/images/social/social43Detail2-sw.png",
+                img1: "./images/social/social43Detail-sw.png",
+                img2: "./images/social/social43Detail1-sw.png",
+                img3: "./images/social/social43Detail2-sw.png",
                 desc: [
                     {
                         id: 9,
