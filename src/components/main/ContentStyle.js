@@ -145,42 +145,40 @@ export const Career = styled.section`
     }
     ul { display: flex;  justify-content: space-between; 
         li {  width: 450px; cursor: pointer;
-        a {
-            h2 {
-                margin: 10px 0 5px 0;
-                font-weight: 500;
-                font-size: 17px;
-                line-height: 20px;
-                letter-spacing: -0.5px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 1;
-                -webkit-box-orient: vertical;
+        h2 {
+            margin: 10px 0 5px 0;
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 20px;
+            letter-spacing: -0.5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        .imgBox {
+            width: 100%;
+            height: 226px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-sizing: border-box;
+            border: 1px solid rgb(228, 228, 228);
+            img {     width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all 0.3s ease 0s;
+                image-rendering: -webkit-optimize-contrast;
             }
-            .imgBox {
-                width: 100%;
-                height: 226px;
-                border-radius: 4px;
-                overflow: hidden;
-                box-sizing: border-box;
-                border: 1px solid rgb(228, 228, 228);
-                img {     width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    transition: all 0.3s ease 0s;
-                    image-rendering: -webkit-optimize-contrast;
-                }
-            }
-            span { 
-                display: inline-block;
-                margin-top: 15px;
-                background-color: #007aff;
-                color: #fff;
-                padding: 3px 8px;
-                border-radius: 8px;
-                font-size: 14px;
-            }
+        }
+        span { 
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #007aff;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 8px;
+            font-size: 14px;
         }
     }
     }
