@@ -16,15 +16,12 @@ const CareerItem = ({item}) => {
     return (
         <>
             <li className={ date > careerData.lastDate ? 'on' : '' } onClick={openPopup}>
-                <a href="#">
-                    <div className="imgBox">
-                        <img src={thumImg} alt={title} />
-                    </div>
-                    <span className="tabCate">{popCate}</span>
-                    <h2 className="tabTitle">{title}</h2>
-                    
-                    <p className="tabDate">{startDate} - {lastDate}</p>
-                </a>
+                <div className="imgBox">
+                    <img src={thumImg} alt={title} />
+                </div>
+                <span className="tabCate">{popCate}</span>
+                <h2 className="tabTitle">{title}</h2>
+                <p className="tabDate">{startDate} - {lastDate}</p>
             </li>
             { isopen && <PopupCareer setIsopen={setIsopen} item={item}/> }
         </>

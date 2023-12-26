@@ -31,7 +31,6 @@ export const CareerGallery = styled.section`
     margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: space-between;
     li {  width: 330px; margin-bottom: 30px; max-width: 330px; cursor: pointer;
         &.on { opacity: .5;}
-        a {
             h2 {
                 margin: 10px 0 5px 0;
                 font-weight: 500;
@@ -67,7 +66,6 @@ export const CareerGallery = styled.section`
                 border-radius: 8px;
                 font-size: 14px;
             }
-        }
     }
     
 `
