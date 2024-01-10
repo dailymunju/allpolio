@@ -1,9 +1,10 @@
 import React from 'react';
+import LikeList from '../../../components/mypage/likes/LikeList';
 
 const Likes = () => {
     return (
         <div>
-            좋아요
+            <LikeList/>
         </div>
     );
 };

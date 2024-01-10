@@ -36,8 +36,6 @@ export const CareerSlice = createSlice({
           state.careerData = state.careerData
 
         }
-
-      
         
       },
 

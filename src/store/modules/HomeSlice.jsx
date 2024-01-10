@@ -22,6 +22,7 @@ export const HomeSlice = createSlice({
     },
     searchMain: (state, action) => {
       state.portfolioData = portfolioData.filter(item=> item.title.toLowerCase().includes( action.payload.toLowerCase() ))
+      state.portfolioData = portfolioData.filter(item=> item.name.toLowerCase().includes( action.payload.toLowerCase() ))
       
     },
     changeLoc: (state, action) => { // 현재위치한 페이지 

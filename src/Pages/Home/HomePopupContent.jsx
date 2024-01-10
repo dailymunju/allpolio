@@ -9,14 +9,16 @@ import { FaCheck } from "react-icons/fa6";
 
 
 const HomePopupContent = ({scrollRef, item}) => {
-    const {id,category ,name, title, likes } = item
+    const {id,category ,name, title, likes,desc } = item
     const [clickLike, setClickLike] = useState(false)
 
-    const {comments , isliked , isfollow } = useSelector( state => state.popupHome)
+    const {comments , isliked , isfollow, likedPortf, followed  } = useSelector( state => state.popupHome)
     const { gallery1, gallery2 } = useSelector( state => state.galleryR )
     const [user, setUser] = useState({  comment : '' , date:'' })
     const [now, setNow] = useState(new Date())
     const dispatch = useDispatch()
+    const newlike = likedPortf.find(port => port.id  === id)
+    const newFollow = followed.find(port => port.id  === id)
     const changeInput = e =>{
         const {value, name} = e.target
         setUser({
@@ -56,15 +58,13 @@ const HomePopupContent = ({scrollRef, item}) => {
 
             <div className='popup-desc'>
                 <p>
-                    DevOps, 디자인시스템과 클린 코드 아키텍처에 대한 관심이 많은 프론트엔드 개발자입니다.<br/>
-                    웹 기술로 더 나은 세상을 만듭니다. UI/UX, 클라우드, 아키텍처, 소프트웨어 테스팅에 관심이 많습니다 :)<br/>
-                    제 포트폴리오를 봐주셔서 감사합니다.
+                    {desc}
                 </p>
             </div>
             <div className="liksenCollectionWrap">
                 <div className="likseCollectionBtnWrap">
                     <button>
-                        <span>좋아요 <i className={isliked ? "on" : ""}> <FaHeart /> </i></span>
+                        <span>좋아요 <i className={newlike ? "on" : ""}> <FaHeart /> </i></span>
                     </button>
                     {/* <button>
                     <FaFolder />
@@ -74,7 +74,7 @@ const HomePopupContent = ({scrollRef, item}) => {
                 <p className="title">{title}</p>
                 <div className='viewslikesWrap'>
                     <p><IoEyeSharp /><span>132</span></p>
-                    <p><FaHeart /><span>{isliked ? (likes ): (likes -1)}</span></p>
+                    <p><FaHeart /><span>{newlike ? (likes ): (likes -1)}</span></p>
                     <p><FaCommentAlt /><span>{comments.length}</span></p>
                 </div>
             </div>
@@ -83,7 +83,7 @@ const HomePopupContent = ({scrollRef, item}) => {
                 <img src={ gallery2[id-1].largeImageURL } alt="" />
                 <span>{name}</span>
                 <div className="btnWrap">
-                    {isfollow?  <button> <FaCheck />팔로잉</button>  :  <button> <FaPlus /> 팔로우</button> } 
+                    {newFollow?  <button> <FaCheck />팔로잉</button>  :  <button> <FaPlus /> 팔로우</button> } 
                     {/* <button><FaCommentDots /> 댓글</button> */}
                 </div>
             </div>

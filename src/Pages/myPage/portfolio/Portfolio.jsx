@@ -3,11 +3,8 @@ import PortfolioList from '../../../components/portfolioList/PortfolioList';
 import { PortfolioWrap } from './PortfolioStyle';
 import { useState } from 'react';
 import PortfolioAdd from '../../../components/portfolioList/PortfolioAdd';
-
 const Portfolio = () => {
     const [isOpen, setIsOpen] = useState(false)
-
-
     const onAdd = () => {
         setIsOpen(!isOpen)
     }
@@ -20,12 +17,10 @@ const Portfolio = () => {
                 </div>
                 {isOpen && <PortfolioAdd setIsOpen={setIsOpen} isOpen={isOpen} />}
                 <ul>
-                    <li><img src="/images/mypageimg/banner1.png" alt="" /></li>
+                    <li><img src="./images/project/banner1.png" alt="" /></li>
                 </ul>
             </PortfolioWrap>
-
         </div>
     );
 };
-
 export default Portfolio;

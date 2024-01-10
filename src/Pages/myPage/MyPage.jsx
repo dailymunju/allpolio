@@ -6,13 +6,17 @@ import { Link, Outlet, useNavigate } from 'react-router-dom';
 import Header from '../../header/header';
 import Footer from '../../footer/footer';
 import { useState } from 'react';
-
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { onTab } from '../../store/modules/mypageSlice';
+import { useEffect } from 'react';
 const MyPage = () => {
     const navigate = useNavigate()
-    const [isTrue, setIsTrue] = useState(false)
-    const onToggle = ()=>{
-        setIsTrue(!isTrue)
-    }
+    const {mypageTabMenu} = useSelector(state => state.mypage)
+    const dispatch = useDispatch()
+    useEffect(()=>{
+        dispatch(onTab(1))
+    },[])
     return (
         <>
             <MypageWrap>
@@ -22,19 +26,15 @@ const MyPage = () => {
                     </article>
                     <article className='mypage-main'>
                         <ul className="tab-menu">
-                            <li className='on' onClick={onToggle}>
-                                <Link to="portfolio">포트폴리오</Link>
-                            </li>
-                            {/* <li>
-                                <Link to="like">좋아요</Link> 
-                            </li>
-                            <li>
-                                <Link to="follow">내활동</Link>
-                            </li> */}
+                            {
+                                mypageTabMenu.map(item => <li key={item.id}>
+                                    <Link to={item.link} className={`${item.isTabOn ? 'on':''}`} onClick={()=>dispatch(onTab(item.id))}>{item.menu}</Link>
+                                </li>)
+                            }
                         </ul>
                         <div className="line"></div>
                         <div className="content">
-                            <Outlet />  
+                            <Outlet />
                         </div>
                     </article>
                 </div>
@@ -42,5 +42,4 @@ const MyPage = () => {
         </>
     );
 };
-
 export default MyPage;

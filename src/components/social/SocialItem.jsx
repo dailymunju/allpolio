@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const SocialItem = ({ item }) => {
-    const { id, image, title, nick, category } = item;
+    const { id, image, title, nick, socialCate } = item;
     const navigate = useNavigate();
 
     return (
@@ -10,11 +10,10 @@ const SocialItem = ({ item }) => {
                 <img src={image} alt="" />
             </div>
             <p>
-                <span>{category}</span>
+                <span>{socialCate}</span>
             </p>
             <h3>{title}</h3>
             <h4>{nick}</h4>
-            
         </article>
     );
 };

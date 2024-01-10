@@ -24,12 +24,20 @@ const HomeCommentEdit = () => {
     }
     const onSubmit = e=>{
         e.preventDefault()
-        user.date =`${now.getFullYear()}-${now.getMonth()+1} - ${now.getDate()}`
-        dispatch(update(user))
-        setUser({
-            comment : ''
-        })
-        dispatch(changeEdit())
+        if(comment === current.comment){
+            console.log(e.target.value)
+            alert("수정된 내용이 없습니다")
+            return
+        }else{   console.log(comment)
+
+            user.date =`${now.getFullYear()}-${now.getMonth()+1} - ${now.getDate()}`
+            dispatch(update(user))
+            setUser({
+                comment : ''
+            })
+            dispatch(changeEdit())
+        }
+
    
     }
     return (

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SocialVisual = styled.div`
-
     width: 100%;
     overflow: hidden;
     margin: 30px 0;

@@ -1,10 +1,14 @@
 import React from 'react';
+import FollowEmpty from '../../../components/mypage/follow/FollowEmpty';
+import FollowList from '../../../components/mypage/follow/FollowList';
+import { FollowWrap } from './FollowWrapStyle';
 
 const Follow = () => {
     return (
-        <div>
-            팔로우
-        </div>
+        <FollowWrap>
+            <h2>팔로우된 사람들</h2>
+            <FollowList />
+        </FollowWrap>
     );
 };
 

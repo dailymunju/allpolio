@@ -53,11 +53,12 @@ const gallerySlice = createSlice({
             state.state = 'rejected'
         })   
         .addCase( getGallerys2.pending, (state, action) => {
-            state.loading = true 
+            state.loading1 = true 
             state.state = 'loading'
         })
         .addCase( getGallerys2.fulfilled , (state, action) => {
             state.loading1 = false
+            state.state = 'fulfilled',
             state.gallery2 = action.payload
         })
         .addCase( getGallerys2.rejected, (state, action) => {

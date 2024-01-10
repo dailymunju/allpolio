@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import {  Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import { useEffect, useState } from "react";
 import { CareerGallery, CareerTab, SubVisWrap } from "./CareerStyle";
 import { RiEqualizerLine } from "react-icons/ri";
@@ -11,6 +11,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { onTab } from '../../store/modules/CareerSlice';
 import { changeLoc } from '../../store/modules/HomeSlice';
 import PopupCate from '../Popup/PopupCate';
+import { addData } from '../../store/modules/paginationSlice';
+import Pagination1 from '../../components/pagination/Pagination1';
 
 const Career = () => {
     const [swiperRef, setSwiperRef] = useState(null);
@@ -19,6 +21,19 @@ const Career = () => {
     const { location } = useSelector(state => state.HomeR)
     const [ data, setData ] = useState(careerCateData)
     const dispatch  = useDispatch()
+    //현재페이지 , 화면에 보일 페이지
+    const { currPage, postsPerPage } = useSelector( state => state.pagination )
+    // currPage = 1 1~10
+    // currPage = 2 11 ~ 20
+
+    const lastPost = currPage * postsPerPage // 1 X 10 = 10
+    const firstPost  = lastPost - postsPerPage
+    const currentPosts = careerData.slice( firstPost, lastPost )
+
+    useEffect(() => { //페이지가 다르므로 갱신필요
+        dispatch( addData(careerData))
+    },[])
+
     const IsOn = (id) => {
         setData( data.map( item => item.id === id ? {...item, isOn : true}  : {...item,isOn:false}))
     }
@@ -44,8 +59,8 @@ const Career = () => {
                         loop={true}
                         pagination={{ clickable: true }}
                     >
-                        <SwiperSlide><img src="./images/careerImg/subVis01.webp" alt="" /></SwiperSlide>
-                        <SwiperSlide><img src="./images/careerImg/subVis02.webp" alt="" /></SwiperSlide>
+                        <SwiperSlide><img src="./images/careerImg/subVis01.png" alt="" /></SwiperSlide>
+                        <SwiperSlide><img src="./images/careerImg/subVis02.png" alt="" /></SwiperSlide>
                     </Swiper>
                 </SubVisWrap>
 
@@ -67,9 +82,11 @@ const Career = () => {
 
                 <CareerGallery>
                     { 
-                        careerData.map(item => <CareerItem key={item.id} item={item} /> ) 
+                        currentPosts.map(item => <CareerItem key={item.id} item={item} /> ) 
                     }
                 </CareerGallery>
+                <Pagination1/>
+                
             </div>
             { isOpen && <PopupCate setIsopen={setIsopen} /> }
         </>

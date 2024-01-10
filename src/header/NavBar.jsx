@@ -4,15 +4,38 @@ import { NavWrap, TopMenu } from './headerStyle';
 import { useEffect, useRef, useState } from "react";
 import { searchMain } from "../store/modules/HomeSlice";
 import { searchCareer } from "../store/modules/CareerSlice";
+import { logout } from "../store/modules/authSlice";
 const NavBar = () => {
+    
     const [text, setText] = useState('')
     const dispatch = useDispatch()
     const { location } = useSelector(state => state.HomeR)
+    const {authed} = useSelector(state => state.auth)
     const textRef = useRef()
+    const [loc, setLoc] = useState(location)
+
+    useEffect(() => { //검색 갱신
+        dispatch(searchCareer(''))
+        dispatch(searchMain(''))
+    },[])
+    const Logout = () => {
+        dispatch(logout())
+        navigate(`/`)
+    }
     const changeInput = e => {
         const {value} = e.target
         setText(value)
     }
+    const TopMenuData = [
+        { id: 1, menu: 'mainPage', name: '포트폴리오', isOn: true, path: "/"},
+        { id: 2, menu: 'careerPage', name: '커리어', isOn: false, path: "/career"},
+        { id: 3, menu: 'interPage', name: '개발자인터뷰', isOn: false, path: "/social" },
+    ]
+    const [data, setData] = useState(TopMenuData)
+    const onMenu = (id) => {
+       setData(data.map(item=> item.id === id ? {...item, isOn: true} : { ...item, isOn:false }))
+    }
+
     const onSubmit = e => {
         e.preventDefault()
         if(!text) return
@@ -22,20 +45,25 @@ const NavBar = () => {
         if(location === 'mainPage'){
             dispatch( searchMain(text) )
         }
+        if(location === 'interPage'){
+            dispatch( searchMain(text) )
+        }
         textRef.current.focus()
     }
-    useEffect(() => { //검색 갱신
-        dispatch(searchCareer(''))
-        dispatch(searchMain(''))
-    },[])
-    const {authed} = useSelector(state => state.auth)
     return (
         <>
+            <div className="logo-wrap">
+                <h1>
+                    <Link to={`/`} onClick={()=>IsOn(0)}><img src="./images/logo.svg" alt="logo" /></Link>
+                </h1>
+            </div>
+
             <NavWrap className="gnb">
-                <li><Link to={"/"}>포트폴리오</Link></li>
-                <li><Link to={"/career"}>커리어</Link></li>
-                <li><Link to={"/social"}>개발자인터뷰</Link></li>
+                {
+                    data.map(item => <li key={item.id}><Link to={item.path} onClick={() => onMenu(item.id)} className={`${item.isOn ? 'on' : ''}`}> { item.name } </Link></li>)
+                }
             </NavWrap>
+
             <TopMenu className="searchWrap">
                 <form onSubmit={onSubmit}>
                     <div className="search-wrap">
@@ -45,14 +73,13 @@ const NavBar = () => {
                     </div>
                 </form>
                 <ul className="auth-wrap">
-                    {/* <li><Link to={"/mypage"}>마이페이지</Link></li> */}
-                    {
+                   {
                         authed ? <li ><Link to={"/mypage"} className="sign-in">마이페이지</Link></li>
                         :
                         <li ><Link to={"/login"} className="sign-in">로그인</Link></li>
                     }
                     {
-                        authed ? <li onClick={()=>dispatch(logout())}><Link to={"/"} className="sign-in">로그아웃</Link></li>
+                        authed ? <li onClick={Logout}><button className="sign-out">로그아웃</button></li>
                         :
                         <li ><Link to={"/Join"} className="sign-up black">회원가입</Link></li>
                     }

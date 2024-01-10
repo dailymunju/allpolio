@@ -30,6 +30,8 @@ const Home = () => {
                     <SwiperSlide><img src="./images/mainVis04.png" alt="" /></SwiperSlide>
                     <SwiperSlide><img src="./images/mainVis05.png" alt="" /></SwiperSlide>
                     <SwiperSlide><img src="./images/mainVis06.png" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="./images/mainVis07.png" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="./images/mainVis08.png" alt="" /></SwiperSlide>
                 </Swiper>
             </VisualWrap>
 

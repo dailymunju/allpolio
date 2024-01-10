@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const Content3 = () => {
     const navigate = useNavigate()
-    const { socialData } = useSelector((state) => state.socialR);
+    const { socialInit } = useSelector(state => state.socialR);
     return (
         <Interview>
             <div className="inner">
@@ -15,7 +15,7 @@ const Content3 = () => {
                 </div>
                 <div className="mainPort">
                         {
-                            socialData.map((item, idx) => idx < 4 && 
+                            socialInit.map((item, idx) => idx < 4 && 
                             <SocialItem key={item.id} item={item} />)
                         }
                 </div>

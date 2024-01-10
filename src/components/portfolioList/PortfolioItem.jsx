@@ -1,15 +1,13 @@
 import React from 'react';
-
-const PortfolioItem = () => {
+const PortfolioItem = ({item}) => {
     return (
         <li>
-            <img src="./images/portImg/andro04.png" alt="" />
+            <img src="./images/project/projectImg1.png" alt="" />
             <div className="box">
-                <img src="./images/portImg/andro04.png" alt="" />
-                <strong>프로젝트명</strong>
+                <img src="./images/project/projectImg2.png" alt="" />
+                <strong>{item.name}</strong>
             </div>
         </li>
     );
 };
-
 export default PortfolioItem;

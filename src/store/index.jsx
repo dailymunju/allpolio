@@ -7,6 +7,7 @@ import popupHome from './modules/PopupHomeSlice'
 import CareerPopup from './modules/CareerPopupSlice'
 import auth from './modules/authSlice'
 import mypage from './modules/mypageSlice'
+import pagination from './modules/paginationSlice'
 export const store = configureStore({
   reducer: {
     galleryR: galleryReducer ,
@@ -17,5 +18,6 @@ export const store = configureStore({
     CareerPopup,
     auth,
     mypage,
+    pagination,
   },
 })

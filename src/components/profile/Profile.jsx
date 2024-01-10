@@ -1,22 +1,50 @@
+import { useState } from "react";
 import { ProfileWrap } from "./ProfileStyle";
-
+import ProfilePopup from "./ProfilePopup";
+import { useSelector } from 'react-redux';
+import { useDispatch } from "react-redux";
+import { logout } from "../../store/modules/authSlice";
+import { useNavigate, useParams } from "react-router-dom";
+import { profileUp } from '../../store/modules/mypageSlice';
+import Withdrawal from "./Withdrawal";
 
 const Profile = () => {
+    const {profileID} = useParams()
+    const {profileData} = useSelector(state => state.mypage)
+    const newItem = profileData
+    const { id, nickname, imgurl, career, occupation } = newItem
+    const [isOpen, setIsOpen] = useState(false)
+    const [withdraw, setWithdraw] = useState(false)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const onOpen = () => {
+        setIsOpen(!isOpen)
+        dispatch(profileUp(newItem))
+    }
+    const Logout = () => {
+        dispatch(logout())
+        navigate(`/`)
+    }
+    const secOpen = () => {
+        setWithdraw(!withdraw)
+    }
     return (
-        <ProfileWrap>
+        <ProfileWrap key={id}>
             <div className="img-box">
-                <img src="./images/portImg/andro04.png" alt="" />
+                <img src={imgurl} alt="" />
             </div>
-            <p className="nickname">닉네임</p>
+            <p className="nickname">{nickname}</p>
             <p className="info">
-                <span>개발-프론트엔드 개발자</span>
-                <span>경력 1년차</span>
+                <span>{occupation}</span>
+                <span>{career}</span>
             </p>
             <p className="btn">
-                <button>프로필 편집</button>
+                <button onClick={onOpen}>프로필 편집</button>
             </p>
-            <p className="disabled">로그아웃</p>
-            <p className="disabled">회원탈퇴</p>
+            {isOpen && <ProfilePopup isOpen={isOpen} setIsOpen={setIsOpen} />}
+            <p className="disabled" onClick={Logout}>로그아웃</p>
+            <p className="disabled" onClick={secOpen}>회원탈퇴</p>
+            {withdraw && <Withdrawal withdraw={withdraw} setWithdraw={setWithdraw} />}
         </ProfileWrap>
     );
 };

@@ -1,19 +1,19 @@
 import styled from 'styled-components'
 export const MainCon = styled.section`
-.swiper-button-prev:after, .swiper-button-next:after { font-size: 12px; font-weight: 600; color: #fff; }
-.swiper-button-next, .swiper-button-prev { top: 25px;
-    background-color: #007aff;
-    height: 30px;
-    width: 30px;
-    border-radius: 20px; }
-.swiper-button-next { right: 5px; }
-.swiper-button-prev { left: 5px;}
+    .swiper-button-prev:after, .swiper-button-next:after { font-size: 12px; font-weight: 600; color: #fff; }
+    .swiper-button-next, .swiper-button-prev { top: 25px;
+        background-color: #007aff;
+        height: 30px;
+        width: 30px;
+        border-radius: 20px; }
+    .swiper-button-next { right: 5px; }
+    .swiper-button-prev { left: 5px;}
     .tit {
-        text-align: left; font-weight: 600; margin-bottom: 20px;
+        text-align: left; font-weight: 600; margin-bottom: 30px;
     }
     .mainPort { padding-top: 20px;
         ul { display: flex; flex-wrap: wrap; 
-            li { width: 23%; margin-bottom: 20px; margin-right: 37px; margin-bottom: 30px;
+            li { width: 23%; margin-bottom: 20px; margin-right: 37px; margin-bottom: 40px;
                 &:nth-child(4n) { margin-right: 0; }
                 a {
                     img { 
@@ -48,7 +48,7 @@ export const UpdatePort = styled.section`
         h2 { color: #fff; margin-bottom: 30px;}
         .curPort { margin-top: 10px; color: #fff;
             ul { display: flex; flex-wrap: wrap; justify-content: space-between;
-                li {width: 23%; margin-bottom: 20px; margin-right: 37px;
+                li { width: 23%; margin-bottom: 20px; margin-right: 37px;
                 &:nth-child(4n) { margin-right: 0; }
                     a {
                         img { 
@@ -80,7 +80,7 @@ export const UpdatePort = styled.section`
 
 `
 export const Interview = styled.section`
-    .tit-box { display: flex;  justify-content: space-between;  margin-bottom: 20px; align-items: baseline;
+    .tit-box { display: flex;  justify-content: space-between;  margin-bottom: 30px; align-items: baseline;
         a { display: inline-block; line-height: 3; }
         button { 
             border: none;
@@ -117,7 +117,6 @@ export const Interview = styled.section`
                 span {
                     font-size: 12px;
                     line-height: 1.3;
-                    /* font-weight: 300 */
                     margin-bottom: 20px;
                 }
             }
@@ -129,8 +128,8 @@ export const Interview = styled.section`
 `
 
 export const Career = styled.section`
-    background-color: #d7e6f69e;
-    .tit-box { margin-bottom: 20px;  display: flex; justify-content: space-between; align-items: baseline;
+    background-color: #f7f7f7;
+    .tit-box { margin-bottom: 30px;  display: flex; justify-content: space-between; align-items: baseline;
         a { display: inline-block; line-height: 3; }
         button { 
             border: none;
@@ -144,43 +143,36 @@ export const Career = styled.section`
         }
     }
     ul { display: flex;  justify-content: space-between; 
-        li {  width: 450px; cursor: pointer;
-        h2 {
-            margin: 10px 0 5px 0;
-            font-weight: 500;
-            font-size: 17px;
-            line-height: 20px;
-            letter-spacing: -0.5px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-        }
-        .imgBox {
-            width: 100%;
-            height: 226px;
-            border-radius: 4px;
-            overflow: hidden;
-            box-sizing: border-box;
-            border: 1px solid rgb(228, 228, 228);
-            img {     width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: all 0.3s ease 0s;
-                image-rendering: -webkit-optimize-contrast;
+        li {  width: 450px; cursor: pointer;position: relative;
+            &:before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 250px; background-color: #000000b5; opacity: 0; transition: .4s; border-radius: 10px; }
+            &:after { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0; transition: .4s; color: #ffffff; font-size: 28px; font-weight: 500; }
+            &:nth-child(1):after { content: '교육';  }
+            &:nth-child(2):after { content: '이벤트'; }
+            &:nth-child(3):after { content: '네트워킹'; }
+
+            &:hover:before  {
+                opacity: 1; transition: .4s;
+            }
+            &:hover:after {
+                opacity: 1; transition: .4s;
+            }
+            h2 {
+                margin: 10px 0 5px 0;
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 20px;
+                letter-spacing: -0.5px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+            img { border-radius: 10px; 
+                
+                
             }
         }
-        span { 
-            display: inline-block;
-            margin-top: 15px;
-            background-color: #007aff;
-            color: #fff;
-            padding: 3px 8px;
-            border-radius: 8px;
-            font-size: 14px;
-        }
-    }
     }
 
 `

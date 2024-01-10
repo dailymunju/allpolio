@@ -1,9 +1,14 @@
-import { careerData } from "../../assets/api/careerData";
-import CareerItem from "../career/CareerItem";
+import { onTab } from '../../store/modules/CareerSlice';
 import { Career } from "./ContentStyle";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
 const Content4 = () => {
+    const { careerData,careerCateData } = useSelector(state => state.CareerR)
     const navigate = useNavigate()
+    const dispatch  = useDispatch()
+    const onThum = () => {
+        // dispatch(onTab ())
+    }
     return (
         <Career>
             <div className="inner">
@@ -14,9 +19,9 @@ const Content4 = () => {
                 </div>
 
                 <ul>
-                    { 
-                        careerData.map((item, idx) => idx < 3 && <CareerItem key={item.id} item={item} /> ) 
-                    }
+                    <li onClick={ onThum }><img src="./images/cont4_01.jpg" alt="" /></li>
+                    <li onClick={ onThum }><img src="./images/cont4_02.jpg" alt="" /></li>
+                    <li onClick={ onThum }><img src="./images/cont4_03.jpg" alt="" /></li>
                 </ul>
             </div>
         </Career>

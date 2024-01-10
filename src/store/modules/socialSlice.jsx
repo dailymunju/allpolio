@@ -1,20 +1,24 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { socialData } from '../../assets/api/socialdata';
+import { createSlice } from "@reduxjs/toolkit";
+import { socialData } from "../../assets/api/socialdata";
+import { socialCateData } from "../../assets/api/socialCateData";
 
 const initialState = {
     socialData: socialData,
+    socialCateData: socialCateData,
     social: [],
+    socialInit: socialData,
 };
 
 export const socialSlice = createSlice({
-    name: 'social',
+    name: "social",
     initialState,
     reducers: {
         onCate: (state, action) => {
-            if (action.payload === '전체') {
+            console.log("action.payload:", action.payload);
+            console.log("socialCateData:", socialCateData);
+            state.socialData = socialData.filter((item) => item.socialCate === action.payload);
+            if (action.payload === "전체") {
                 state.socialData = socialData;
-            } else {
-                state.socialData = socialData.filter((item) => item.category === action.payload);
             }
         },
         searchSocial: (state, action) => {

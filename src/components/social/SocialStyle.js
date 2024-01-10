@@ -1,8 +1,6 @@
 import styled from "styled-components";
-
 export const SocialListWrap = styled.section`
-    /* width: 1400px; */
-    display: flex;
+    display: flex; padding-top: 20px;
     flex-wrap: wrap;
     article {
         width: 22%;
@@ -31,7 +29,6 @@ export const SocialListWrap = styled.section`
             span {
                 font-size: 12px;
                 line-height: 1.3;
-                /* font-weight: 300 */
                 margin-bottom: 20px;
             }
         }
@@ -40,7 +37,6 @@ export const SocialListWrap = styled.section`
         }
     }
 `;
-
 export const SocialDetailWrap = styled.div`
     width: 800px;
     margin: 65px auto 120px;
@@ -59,7 +55,6 @@ export const SocialDetailWrap = styled.div`
         }
     }
 `;
-
 export const SocialTitle = styled.div`
     display: block;
     p {
@@ -82,49 +77,65 @@ export const SocialTitle = styled.div`
         }
     }
 `;
-
 export const SocialContent = styled.section`
-    img {
-        width: 100%; margin-bottom: 10px;
-    }
-    h3 {
-        font-size: 32px;
-        font-weight: 600;
-        margin-bottom: 20px;
-    }
-    article { margin-bottom: 40px;
-        h2 {
-            font-size: 23px;
-            font-weight: 500;
-            color: #438aff;margin-bottom: 10px;
+    div {
+        img {
+            width: 100%;
         }
-        p {
-            font-size: 18px; word-break: keep-all; 
+        span {
+            font-size: 32px;
+            font-weight: 600;
+        }
+        article {
+            h2 {
+                font-size: 23px;
+                font-weight: 500;
+                color: #438aff;
+            }
+            p {
+                font-size: 18px;
+            }
         }
     }
 `;
-export const Menu = styled.ul`
-.swiper-button-prev:after, .swiper-button-next:after { font-size: 12px; font-weight: 600; color: #fff; }
-.swiper-button-next, .swiper-button-prev { top: 25px;
-    background-color: #007aff;
-    height: 30px;
-    width: 30px;
-    border-radius: 20px; }
-.swiper-button-next { right: 5px; }
-.swiper-button-prev { left: 5px;}
-    margin-bottom: 30px;
-    .tag {
-        border: 1px solid #438aff;
-        border-radius: 15px;
-        padding: 3px 10px;
+
+export const DtListWrap = styled.div`
+    position: fixed;
+    width: 700px;
+    z-index: 2;
+    top: 0px;
+`;
+
+export const SocialDtList = styled.ul`
+    position: absolute;
+    right: -350px;
+    top: 230px;
+    width: 200px;
+    li {
+        font-size: 16px;
+        line-height: 25px;
+        position: relative;
+        border-left: 2px solid #999;
+        font-weight: 500;
+        padding: 8px 0 8px 10px;
         cursor: pointer;
-        color: #438aff;
-        font-size: 18px;
-        text-align: center;
+    }
+`;
+
+export const Menu = styled.ul`
+    display: flex;
+    .tag { margin-bottom: 10px;
+        border: 1px solid #438aff; border-radius: 15px; padding: 3px 10px; cursor: pointer; color: #438aff; font-size: 18px; text-align: center;
         &.on {
-            background-color: #438aff;
-            border-color: #438aff;
-            color: #fff;
+            background-color: #438aff; border-color: #438aff; color: #fff;
         }
     }
+    .swiper-button-prev:after, .swiper-button-next:after { font-size: 12px; font-weight: 600; color: #fff; }
+    .swiper-button-next, .swiper-button-prev { top: 25px;
+        background-color: #007aff;
+        height: 30px;
+        width: 30px;
+        border-radius: 20px; }
+    .swiper-button-next { right: 5px; }
+    .swiper-button-prev { left: 5px;}
 `;

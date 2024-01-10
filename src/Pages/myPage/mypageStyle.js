@@ -1,6 +1,5 @@
 import styled from "styled-components"
- 
-export const MypageWrap = styled.div` 
+export const MypageWrap = styled.div`
     .inner{display: flex;padding-top: 50px;}
     article {
         margin-right: 10px;
@@ -11,7 +10,9 @@ export const MypageWrap = styled.div`
                 display: flex;
                 li {
                     padding: 20px 10px;box-sizing: border-box;font-size: 16px;
-                    &.on a {color: #2C5BF0;font-weight: 500;}
+                    a{
+                        &.on{color: #2C5BF0;font-weight: 500;}
+                    }
                     &:first-child {padding-left: 0;}
                 }
             }

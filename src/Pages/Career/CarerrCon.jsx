@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const CarerrCon = ({item}) => {
     const navigate = useNavigate()
-    const {thumImg, title, popCate, startDate, lastDate } = item
+    const {thumImg, title, popCate, startDate, lastDate, popDesc } = item
     const ontop =()=>{
         window.scrollTo(0, 0);
     }
@@ -27,7 +27,7 @@ const CarerrCon = ({item}) => {
                     <strong>{title}</strong>
                     <p className="date">{startDate} (화) -  {lastDate} (금) </p>
                     {/* 텍스트 임의로 넣음  */}
-                    <p className="content">우리는 규모 있는 회사에서 멋진 프로젝트로 성과를 내고 외부 활동도 활발하게 하는, 그야말로 ‘잘 나가는’ 사람을 콘텐츠 미디어에서 자주 봅니다. </p>
+                    <p className="content">{popDesc}</p>
                     <div className="part on" onClick={onGo}>참가 신청</div>
                 </div>
             </div>
@@ -35,8 +35,6 @@ const CarerrCon = ({item}) => {
                 <p>
                 <img src= {thumImg }alt=''/>
                 </p>
-             
-                
             </div>
             <div className='btnwrap'>
                 <div className="share"><IoShareSocial /></div>

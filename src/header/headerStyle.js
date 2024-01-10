@@ -15,6 +15,7 @@ export const HeaderWrap = styled.header`
             .gnb { align-items: center; display: flex; flex-direction: row; justify-content: center; margin-left: 22px;
                 li { margin-right: 20px;
                     a {
+                        &.on { color: #007aff; }
                         align-items: center;
                         color: rgb(44, 48, 48);
                         display: flex;
@@ -105,7 +106,7 @@ export const TopMenu = styled.div`
                 }
                 &.sign-up{
                     align-items: center;
-                    background: #007aff;
+                    background: #007AFF;
                     border-radius: 19px;
                     color: rgb(255, 255, 255);
                     cursor: pointer;
@@ -122,6 +123,7 @@ export const TopMenu = styled.div`
                     text-decoration: none;
                 }
             }
+            .sign-out { font-size: 14px;color: rgb(44,48,48);font-weight: 400;line-height: 16px;text-align: center;text-decoration:none; background-color: #fff;border: none;align-items: center;cursor: pointer;}
         }
     }
 `

@@ -1,21 +1,17 @@
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SocialVisual, SocialWrap } from "./socialStyle";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import SocialList from "../../components/social/SocialList";
 import { useEffect, useState } from "react";
 import SocialMenu from "../../components/social/SocialMenu";
-
+import { socialData } from "../../assets/api/socialdata";
 const Social = () => {
-    const [selectedCate, setselectedCate] = useState("전체");
-    const changeCate = (newCategory) => {
-        setselectedCate(newCategory);
-    };
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
     return (
         <div className="inner">
             <SocialWrap>
@@ -36,15 +32,16 @@ const Social = () => {
                         <SwiperSlide>
                             <img src="./images/social/visual2.png" alt="" />
                         </SwiperSlide>
+                        <SwiperSlide>
+                            <img src="./images/social/visual3.png" alt="" />
+                        </SwiperSlide>
                     </Swiper>
                 </SocialVisual>
-                
                 <h2>개발자 인터뷰</h2>
-                <SocialMenu changeCate={changeCate} />
-                <SocialList selectedCate={selectedCate} />
+                <SocialMenu />
+                <SocialList />
             </SocialWrap>
         </div>
     );
 };
-
 export default Social;
