@@ -32,9 +32,6 @@ const Social = () => {
                         <SwiperSlide>
                             <img src="./images/social/visual2.png" alt="" />
                         </SwiperSlide>
-                        <SwiperSlide>
-                            <img src="./images/social/visual3.png" alt="" />
-                        </SwiperSlide>
                     </Swiper>
                 </SocialVisual>
                 <h2>개발자 인터뷰</h2>

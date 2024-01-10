@@ -54,7 +54,7 @@ const NavBar = () => {
         <>
             <div className="logo-wrap">
                 <h1>
-                    <Link to={`/`} onClick={()=>IsOn(0)}><img src="./images/logo.svg" alt="logo" /></Link>
+                    <Link to={`/`} onClick={()=>onMenu(1)}><img src="./images/logo.svg" alt="logo" /></Link>
                 </h1>
             </div>
 
