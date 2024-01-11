@@ -25,7 +25,7 @@ const GalleryItem = ({item }) => {
             <div>
                 <p className="thum">
                 {
-                    id > gallery2.length-1 ? <img src={ gallery2[id-gallery1.length].urls.regular } alt="portpolio image"/> : <img src={ gallery2[id].urls.regular } alt="portpolio image"/>
+                    id > gallery2.length-1 ? <img src={ gallery2[id-gallery2.length].urls.regular } alt="portpolio image"/> : <img src={ gallery2[id].urls.regular } alt="portpolio image"/>
                 }
                     <span>{name}</span>
                 </p>

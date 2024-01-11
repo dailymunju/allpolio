@@ -6,9 +6,13 @@ const LikeItem = ({item}) => {
     const { gallery1, gallery2 } = useSelector( state => state.galleryR )
     return (
         <li>
-            <img src={gallery1[id-1].largeImageURL } alt="" />
+                {
+                    id > gallery1.length-1 ? <img src={ gallery2[id-gallery1.length].urls.raw } alt="portpolio image"/> : <img src={ gallery1[id].urls.raw } alt="portpolio image"/>
+                }
             <div>
-                <img src={gallery2[id-1].largeImageURL} alt="" />
+                {
+                    id > gallery2.length-1 ? <img src={ gallery2[id-gallery2.length].urls.regular } alt="portpolio image"/> : <img src={ gallery2[id].urls.regular } alt="portpolio image"/>
+                }
                 <p>{title}</p>
             </div>
         </li>
