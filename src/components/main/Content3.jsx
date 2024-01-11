@@ -14,10 +14,10 @@ const Content3 = () => {
                     <button onClick={() => navigate(`/social`)}>더보러가기</button>
                 </div>
                 <div className="mainPort">
-                        {
-                            socialInit.map((item, idx) => idx < 4 && 
-                            <SocialItem key={item.id} item={item} />)
-                        }
+                    {
+                        socialInit.map((item, idx) => idx < 4 && 
+                        <SocialItem key={item.id} item={item} />)
+                    }
                 </div>
             </div>
         </Interview>

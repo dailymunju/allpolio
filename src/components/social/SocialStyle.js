@@ -16,6 +16,7 @@ export const SocialListWrap = styled.section`
             }
         }
         h3 {
+            word-break: keep-all;
             font-size: 16px;
             margin-bottom: 10px;
         }
@@ -61,15 +62,8 @@ export const SocialTitle = styled.div`
         color: #24dfa5;
         font-size: 16px;
     }
-    h1 {
-        font-size: 36px;
-        font-weight: 700;
-    }
-    span {
-    }
-    div {
-        margin-top: 10px;
-        margin-bottom: 40px;
+    h1 { font-size: 36px; font-weight: 700; line-height: 1; }
+    div { margin: 20px 0; 
         span {
             padding: 2px 20px;
             border: 1px solid #dcdcdc;
@@ -79,22 +73,11 @@ export const SocialTitle = styled.div`
 `;
 export const SocialContent = styled.section`
     div {
-        img {
-            width: 100%;
-        }
-        span {
-            font-size: 32px;
-            font-weight: 600;
-        }
-        article {
-            h2 {
-                font-size: 23px;
-                font-weight: 500;
-                color: #438aff;
-            }
-            p {
-                font-size: 18px;
-            }
+        img { width: 100%; margin-bottom: 10px; }
+        span { display: inline-block; font-size: 32px; font-weight: 600; margin-bottom: 10px; }
+        article { margin-bottom: 40px;
+            h2 { font-size: 23px; font-weight: 500; margin-bottom: 10px; color: #438aff; word-break: keep-all;}
+            p { font-size: 18px;  word-break: keep-all; }
         }
     }
 `;

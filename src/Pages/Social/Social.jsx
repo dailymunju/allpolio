@@ -6,12 +6,22 @@ import "swiper/css/pagination";
 import SocialList from "../../components/social/SocialList";
 import { useEffect, useState } from "react";
 import SocialMenu from "../../components/social/SocialMenu";
-import { socialData } from "../../assets/api/socialdata";
+import { changeLoc } from "../../store/modules/HomeSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { searchSocial } from "../../store/modules/socialSlice";
 const Social = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+    const { location } = useSelector(state => state.HomeR)
+    const dispatch = useDispatch()
 
+    const [loc, setLoc] = useState(location)
+    useEffect(()=>{
+        dispatch(changeLoc('socialPage'))
+        window.scrollTo(0,0);
+    },[])
+
+    useEffect(() => {
+        dispatch(searchSocial(''))
+    })
     return (
         <div className="inner">
             <SocialWrap>

@@ -44,8 +44,6 @@ const App = () => {
           </Route>
       </Routes>
     </BrowserRouter>
-      {/* <Home /> */}
-      {/* <HomePopup/> / */}
     </>
   );
 };

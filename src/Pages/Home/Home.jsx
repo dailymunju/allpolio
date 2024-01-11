@@ -9,11 +9,18 @@ import { useEffect, useState } from "react";
 import Content2 from "../../components/main/Content2";
 import Content3 from "../../components/main/Content3";
 import Content4 from "../../components/main/Content4";
+import { searchMain } from "../../store/modules/HomeSlice";
+import { useDispatch } from "react-redux";
 const Home = () => {
     const [swiperRef, setSwiperRef] = useState(null);
+    const dispatch = useDispatch()
     useEffect(() => {
         window.scrollTo(0,0);
     }, [])
+
+    useEffect(() => {
+        dispatch(searchMain(''))
+    },[])
     return (
         <>
             <VisualWrap>

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { searchMain } from "../store/modules/HomeSlice";
 import { searchCareer } from "../store/modules/CareerSlice";
 import { logout } from "../store/modules/authSlice";
+import { searchSocial } from "../store/modules/socialSlice";
 const NavBar = () => {
     
     const [text, setText] = useState('')
@@ -17,6 +18,7 @@ const NavBar = () => {
     useEffect(() => { //검색 갱신
         dispatch(searchCareer(''))
         dispatch(searchMain(''))
+        dispatch(searchSocial(''))
     },[])
     const Logout = () => {
         dispatch(logout())
@@ -45,9 +47,10 @@ const NavBar = () => {
         if(location === 'mainPage'){
             dispatch( searchMain(text) )
         }
-        if(location === 'interPage'){
-            dispatch( searchMain(text) )
+        if(location === 'socialPage'){
+            dispatch( searchSocial(text) )
         }
+        setText('')
         textRef.current.focus()
     }
     return (

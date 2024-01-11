@@ -13,41 +13,34 @@ export const CareerSlice = createSlice({
    
     reducers: {
       onTab: (state, action) => {
-         state.careerData = careerData.filter(item => item.tabCate === action.payload)
-         if(action.payload === '전체'){
-          state.careerData = careerData
+        state.careerData = careerData.filter(item => item.tabCate === action.payload)
+        if(action.payload === '전체'){
+         state.careerData = careerData
         }
       },
       searchCareer: (state, action) => {
         state.careerData = careerData.filter(item=> item.title.toLowerCase().includes( action.payload.toLowerCase() ))
-        
       },
       popupSort: (state, action) => {
         if(action.payload.id === 1){
           state.careerData.sort((a,b) => a[action.payload.sortBy]>b[action.payload.sortBy] ? 1 : -1)
-
         }
         if(action.payload.id === 2){
           console.log(action.payload.sortBy)
           state.careerData.sort((a,b) => a[action.payload.sortBy]>b[action.payload.sortBy] ? 1 : -1).reverse()
-
         }
         if(action.payload.id !== 3){
           state.careerData = state.careerData
-
         }
-        
       },
 
       popupFilter2 : (state, action) =>{
         //팝업 카테고리.. 수정 필요
-       
         state.careerData = careerData.filter(item => item.popCate === action.payload)
         if(action.payload === '' ){
           state.careerData = state.careerData
         }
       }
-     
     }
   })
   

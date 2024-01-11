@@ -11,6 +11,6 @@ export const VisualWrap = styled.div`
 
 export const MainWrap = styled.div`
     &.main{}
-    .inner { padding:40px 0 }
+    .inner { padding: 65px 0 }
     h2 { font-size:30px; font-weight:700 }
 `

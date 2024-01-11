@@ -61,12 +61,12 @@ export const TopMenu = styled.div`
     right: 0;
     .search-wrap {
         display: flex;
-        margin: 0px 16px;
+        margin-right: 5px;
         min-width: 280px;
         max-width: 280px;
         position: relative;
         width: 100%;
-        height: 33px;
+        height: 32px;
 
         input {
             background-color: rgb(247, 249, 249);
@@ -96,9 +96,9 @@ export const TopMenu = styled.div`
             a {
                 &.sign-in {
                     align-items: center;
-                    color: rgb(44, 48, 48);
+                    color: rgb(44, 48, 48);padding: 0 7px;
                     cursor: pointer;
-                    font-size: 13px;
+                    font-size: 15px;
                     font-weight: 400;
                     line-height: 16px;
                     text-align: center;
@@ -107,19 +107,19 @@ export const TopMenu = styled.div`
                 &.sign-up{
                     align-items: center;
                     background: #007AFF;
-                    border-radius: 19px;
+                    border-radius: 15px;
                     color: rgb(255, 255, 255);
                     cursor: pointer;
                     display: flex;
                     font-size: 13px;
                     font-weight: 700;
-                    height: 38px;
+                    height: 35px;
                     justify-content: center;
                     letter-spacing: -0.4px;
                     line-height: 16px;
-                    margin-left: 14px;
+                    margin-left: 5px;
                     margin-right: 5px;
-                    padding: 0px 16px;
+                    padding: 0px 14px;
                     text-decoration: none;
                 }
             }

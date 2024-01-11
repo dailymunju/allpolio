@@ -14,17 +14,13 @@ export const socialSlice = createSlice({
     initialState,
     reducers: {
         onCate: (state, action) => {
-            console.log("action.payload:", action.payload);
-            console.log("socialCateData:", socialCateData);
             state.socialData = socialData.filter((item) => item.socialCate === action.payload);
             if (action.payload === "전체") {
                 state.socialData = socialData;
             }
         },
         searchSocial: (state, action) => {
-            state.socialData = socialData.filter((item) =>
-                item.title.toLowerCase().includes(action.payload.toLowerCase())
-            );
+            state.socialData = socialData.filter( item => item.title.includes(action.payload));
         },
     },
 });

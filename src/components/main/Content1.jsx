@@ -4,34 +4,29 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
 import { getGallerys1, getGallerys2 } from '../../store/modules/gallerySlice';
 import GalleryItem from "./GalleryItem";
-import { portfolioData } from "../../assets/api/portfolioData";
 import { changeLoc } from '../../store/modules/HomeSlice';
-import { addData } from "../../store/modules/paginationSlice";
-import Pagination1 from "../pagination/Pagination1";
 
 const Content1 = () => {
     const { text1, text2, loading, loading1 } = useSelector( state => state.galleryR )
     const { portfolioData } = useSelector(state => state.HomeR)
     const dispatch  = useDispatch()
-    const { currPage, postsPerPage } = useSelector(state => state.pagination)
 
-    const lastPost = currPage * postsPerPage
-    const firstPost = lastPost - postsPerPage
-    const currentPosts = portfolioData.slice(firstPost, lastPost)
-    useEffect(() => { //페이지가 다르므로 갱신필요
-        dispatch( addData(portfolioData))
-    },[])
-
-    useEffect( () => {       
+    useEffect( () => {
         dispatch( getGallerys1(text1) )
         dispatch( getGallerys2(text2) )
-    } ,[]) 
-
+    } ,[])
     const [loc, setLoc] = useState(location)
     useEffect(()=>{
         dispatch(changeLoc('mainPage'))
     },[])
-   
+   const [more, setMore] = useState(false)
+   const [showContent,  setshowContent] = useState(8)
+   const onMore =()=>{
+        if(showContent < portfolioData.length){
+            setshowContent(showContent + 8)
+        }
+       setMore(!more)
+   }
     return (
         <MainCon>
             <div className="inner">
@@ -40,10 +35,14 @@ const Content1 = () => {
                 <div className="mainPort">
                     <ul>
                         {
-                           !loading && !loading1 && currentPosts.map(item => <GalleryItem key={item.id} item ={item}  />)                        
+                           !loading && !loading1 &&  portfolioData.slice
+                           (0,showContent).map(item => <GalleryItem key={item.id} item ={item}  />)
                         }
+                        
                     </ul>
-                    <Pagination1/>
+                    {
+                            showContent < portfolioData.length &&  <div onClick={onMore} className="moreBtn"> 더보기 </div>
+                        }
                 </div>
             </div>
         </MainCon>

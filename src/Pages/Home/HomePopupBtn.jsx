@@ -45,7 +45,9 @@ const HomePopupBtn = ({move, item }) => {
         
         <div className="MainPopupBtnWrap">
             <p>
-                <img src={ gallery2[id-1].largeImageURL } alt="" />
+                {
+                    id > gallery2.length-1 ? <img src={ gallery2[id-gallery2.length].urls.regular } alt="portpolio image"/> : <img src={ gallery2[id].urls.regular } alt="portpolio image"/>
+                }
                 <span>프로필</span>
             </p>
             <p>
@@ -60,7 +62,7 @@ const HomePopupBtn = ({move, item }) => {
             
             <p className='collection'>
                 <button onClick={()=>dispatch(changeFollow(item))}>   {
-                    newFollow   ?<FaCheck />  : <FaPlus /> 
+                    newFollow ? <FaCheck />  : <FaPlus /> 
                  }  </button>
                 <span>팔로우</span>
             </p>

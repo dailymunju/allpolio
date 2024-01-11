@@ -15,10 +15,8 @@ export const MainCon = styled.section`
         ul { display: flex; flex-wrap: wrap; 
             li { width: 23%; margin-bottom: 20px; margin-right: 37px; margin-bottom: 40px;
                 &:nth-child(4n) { margin-right: 0; }
-                a {
-                    img { 
-                        width: 100%; border-radius: 10px;  height: 200px;
-                    }
+                img { 
+                    width: 100%; border-radius: 10px;  height: 200px; cursor: pointer;
                 }
                 span {
                     &.cateName { display: inline-block;
@@ -32,12 +30,23 @@ export const MainCon = styled.section`
                 }
                 div { display: flex; justify-content: space-between; margin-top: 10px; align-items: center;
                     .thum {
-                        img { border-radius: 50px; width: 27px; height: 25px; margin-right: 20px; }
+                        img { border-radius: 50px; width: 35px; height: 35px; margin-right: 20px; }
                         span { font-size: 14px; }
                     }
                     i { svg {margin-right: 5px; color:#24dfa5;} }
                 }
             }
+        }
+        .moreBtn { 
+            font-size: 16px;
+            padding: 10px 0;
+            width: 200px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #ffffff;
+            border: 1px solid #333;
+            transition: .3s; cursor: pointer;
+            &:hover { background-color: #333; color: #fff; transition: .3s; border-color: #ddd; }
         }
     }
 
@@ -50,10 +59,8 @@ export const UpdatePort = styled.section`
             ul { display: flex; flex-wrap: wrap; justify-content: space-between;
                 li { width: 23%; margin-bottom: 20px; margin-right: 37px;
                 &:nth-child(4n) { margin-right: 0; }
-                    a {
-                        img { 
-                            width: 100%; border-radius: 10px;  height: 200px;
-                        }
+                    img { 
+                        width: 100%; border-radius: 10px;  height: 200px; cursor: pointer;
                     }
                     span {
                         &.cateName { display: inline-block;
@@ -68,7 +75,7 @@ export const UpdatePort = styled.section`
                     }
                     div { display: flex; justify-content: space-between; margin-top: 10px; align-items: center;
                         .thum {
-                            img { border-radius: 50px; width: 27px; height: 25px; margin-right: 20px; }
+                            img { border-radius: 50px; width: 35px; height: 35px; margin-right: 20px; }
                             span { font-size: 14px; }
                         }
                         i { svg {margin-right: 5px; color:#24dfa5;} }

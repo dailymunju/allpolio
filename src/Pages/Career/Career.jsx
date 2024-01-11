@@ -8,7 +8,7 @@ import { CareerGallery, CareerTab, SubVisWrap } from "./CareerStyle";
 import { RiEqualizerLine } from "react-icons/ri";
 import CareerItem from '../../components/career/CareerItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { onTab } from '../../store/modules/CareerSlice';
+import { onTab, searchCareer } from '../../store/modules/CareerSlice';
 import { changeLoc } from '../../store/modules/HomeSlice';
 import PopupCate from '../Popup/PopupCate';
 import { addData } from '../../store/modules/paginationSlice';
@@ -30,7 +30,7 @@ const Career = () => {
     const firstPost  = lastPost - postsPerPage
     const currentPosts = careerData.slice( firstPost, lastPost )
 
-    useEffect(() => { //페이지가 다르므로 갱신필요
+    useEffect(() => {
         dispatch( addData(careerData))
     },[])
 
@@ -41,6 +41,10 @@ const Career = () => {
     useEffect(()=>{
         dispatch(changeLoc('careerPage'))
         window.scrollTo(0,0);
+    },[])
+    //검색 비우기
+    useEffect(() => {
+        dispatch(searchCareer(''))
     },[])
     
     const openPopup=()=>[
@@ -67,7 +71,7 @@ const Career = () => {
                 <CareerTab>
                     <ul>
                         {
-                            data.map(item=>  <li onClick={() => dispatch(onTab(item.tabCate))} key={item.id}>
+                            data.map(item=> <li onClick={() => dispatch(onTab(item.tabCate))} key={item.id}>
                                 <span className={`${ item.isOn ? 'on' : '' }`} onClick={() => IsOn(item.id)}>
                                 {item.tabCate}
                                 </span>
@@ -86,7 +90,6 @@ const Career = () => {
                     }
                 </CareerGallery>
                 <Pagination1/>
-                
             </div>
             { isOpen && <PopupCate setIsopen={setIsopen} /> }
         </>

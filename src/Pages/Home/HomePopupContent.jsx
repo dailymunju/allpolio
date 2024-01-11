@@ -43,7 +43,11 @@ const HomePopupContent = ({scrollRef, item}) => {
         <div className='Main-PopupWrap'>
             <div className='profile'>
                 <p className='proLeft'> 
-                    <img src={ gallery2[id-1].largeImageURL }/>
+                    {/* <img src={ gallery2[id].urls.raw } alt=""/> */}
+                    {
+                        id > gallery2.length-1 ? <img src={ gallery2[id-gallery2.length].urls.regular } alt="portpolio image"/> : <img src={ gallery2[id].urls.regular } alt="portpolio image"/>
+                    }
+
                     <strong>{title}</strong>
                 </p>
                 <div className='profileName'>
@@ -53,7 +57,9 @@ const HomePopupContent = ({scrollRef, item}) => {
             </div>
         
             <div className="popup-MainImg">
-                <img src={ gallery1[id-1].largeImageURL } alt="" />
+            {
+                id > gallery1.length-1 ? <img src={ gallery1[id-gallery1.length].urls.raw } alt="portpolio image"/> : <img src={ gallery1[id].urls.raw } alt="portpolio image"/>
+            }
             </div>
 
             <div className='popup-desc'>
@@ -66,10 +72,6 @@ const HomePopupContent = ({scrollRef, item}) => {
                     <button>
                         <span>좋아요 <i className={newlike ? "on" : ""}> <FaHeart /> </i></span>
                     </button>
-                    {/* <button>
-                    <FaFolder />
-                        <span>컬랙션 저장</span>
-                    </button> */}
                 </div>
                 <p className="title">{title}</p>
                 <div className='viewslikesWrap'>
@@ -80,7 +82,9 @@ const HomePopupContent = ({scrollRef, item}) => {
             </div>
 
             <div className="bottomWrap">
-                <img src={ gallery2[id-1].largeImageURL } alt="" />
+                {
+                    id > gallery2.length-1 ? <img src={ gallery2[id-gallery1.length].urls.regular } alt="portpolio image"/> : <img src={ gallery2[id].urls.regular } alt="portpolio image"/>
+                }
                 <span>{name}</span>
                 <div className="btnWrap">
                     {newFollow?  <button> <FaCheck />팔로잉</button>  :  <button> <FaPlus /> 팔로우</button> } 

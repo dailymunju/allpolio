@@ -8,7 +8,7 @@ import { changeLoc } from "../../store/modules/HomeSlice";
 
 const SocialMenu = () => {
     const { socialData, socialCateData } = useSelector((state) => state.socialR);
-    const { location } = useSelector((state) => state.HomeR);
+    const { location } = useSelector(state => state.HomeR);
     const [data, setData] = useState(socialCateData);
     const dispatch = useDispatch();
     const IsOn = (id) => {
@@ -37,8 +37,7 @@ const SocialMenu = () => {
                                     if (item.socialCate !== "전체") {
                                         dispatch(onCate(item.socialCate));
                                     } else {
-                                        // 전체를 클릭한 경우 모든 카테고리의 내용을 표시
-                                        dispatch(onCate("전체")); // 또는 다른 특별한 값을 넣어도 됩니다.
+                                        dispatch(onCate("전체"));
                                     }
                                     IsOn(item.id);
                                 }}

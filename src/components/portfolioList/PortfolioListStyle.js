@@ -19,18 +19,24 @@ export const PortfolioAddWrap=styled.div`
     form {
 
         width: 1400px;height: 800px;background-color: #fff;z-index:1;position: fixed;left: 50%;top: 80px;transform:translateX(-50%);padding: 30px 50px;box-sizing: border-box;overflow: scroll;
-        h2 {text-align:left;margin-top: 30px;}
+        h2 {text-align:left;margin-top: 30px;font-size: 30px;margin-bottom: 50px;}
         h3 {text-align:left;margin-top: 20px;font-size:20px;}
 
         .con1 {
             display: flex;margin-top: 20px;
             p {
                 position: relative;margin-right: 20px;
-                input[type=radio] {position: absolute;left: 10px;top: 10px;width: 20px;height: 20px;}
-                img {width: 150px;}
+                input[type=radio] {position: absolute;width: 0;height: 0;padding: 0;}
+                label {
+                    cursor: pointer;
+                    img {width: 150px;border-radius: 5px;}
+                }
+                input[type=radio]:checked + label {
+                    outline: 5px solid #2C5BF0;border-radius: 3px;
+                }
             }
         }
-        .con2 {
+        .title {
             padding-right: 30px;text-align: left;
             input[type=text] {display: block;margin-right: 30px;width: 1300px;height: 60px;border: none;border-bottom: 1px solid #ddd;outline:none;text-indent: 5px;font-size: 16px;
                 &::placeholder {color: #a7a7a7;}
@@ -41,17 +47,17 @@ export const PortfolioAddWrap=styled.div`
             input[type=date] {text-align: left;width: 600px;height: 60px;border: none;border-bottom: 1px solid #ddd;font-size: 16px;}
             label {margin: 0 44px;font-size: 16px;}
         }
-        .con4 {
+        .category {
 
             display: flex;justify-content: space-between;flex-wrap:wrap;margin-top: 20px;
         }
-        .con5 {
+        .url {
             margin-top: 20px;
             input[type=text] {margin-right: 30px;width: 1300px;height: 60px;border: none;border-bottom: 1px solid #ddd;font-size: 16px;text-indent: 5px;outline:none;
                 &::placeholder {color: #a7a7a7;}
             }
         }
-        .con6 {
+        .detail {
             margin-top: 20px;
             textarea {width: 1300px;margin-right: 30px;padding:10px 5px;box-sizing: border-box;border-color: #ddd;font-size: 16px;outline:none;border-radius: 5px;
                 &::placeholder {color: #a7a7a7;}
@@ -69,11 +75,11 @@ export const PortfolioAddWrap=styled.div`
 
 export const TechnologyWrap = styled.div`
     text-align: left;position: relative;
-    button {position: relative;width: 635px;height: 60px;border: none;border-bottom: 1px solid #ddd;background-color: #fff;text-align: left;font-size: 16px;color: #a7a7a7;cursor: pointer;}
+    button {position: relative;width: 1300px;height: 60px;border: none;border-bottom: 1px solid #ddd;background-color: #fff;text-align: left;font-size: 16px;color: #a7a7a7;cursor: pointer;}
     i {position: absolute;right: 15px;top: 50%;transform:translateY(-50%);color: #6e6e6e;font-size: 20px;}
     .selectBox {
-        width: 630px;border: 1px solid #438AFF;border-radius: 5px;margin-top: 5px;padding: 5px;box-sizing: border-box;position: absolute;left: 0;top: 60px;background-color: #fff;
-        li {padding: 5px 10px;color: #6e6e6e;cursor: pointer;
+        width: 1300px;border: 1px solid #438AFF;border-radius: 5px;margin-top: 5px;padding: 5px;box-sizing: border-box;position: absolute;left: 0;top: 60px;background-color: #fff;
+        li {padding: 5px 10px;color: #6e6e6e;cursor: pointer;width: 1300px;
             &.on {color: #438aff;}
         }
     }
@@ -85,4 +91,8 @@ export const TechnologyTegWrap = styled.ul`
         padding:5px 10px;box-sizing: border-box;border: 1px solid #ddd;border-radius: 5px;margin-right: 20px;color: #6e6e6e;cursor: pointer;
         &.on {border: 1px solid #438aff;color: #438aff;}
     }
+`
+
+export const DatepickerWrap = styled.div`
+    
 `

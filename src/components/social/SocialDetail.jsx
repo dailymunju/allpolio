@@ -57,16 +57,15 @@ const SocialDetail = () => {
                 <div>
                     <img src={img1} alt="" />
                     <span ref={list1Ref}>{desctitle1}</span>
-                    <br />
-                    <br />
+
                     <article>
                         <h2>{descQ1}</h2>
                         <p>{descA1}</p>
                     </article>
-                    <br />
+
                     <span ref={list2Ref}>{desctitle2}</span>
                     <img src={img2} alt="" />
-                    <br />
+                    
                     <article>
                         <h2>{descQ2}</h2>
                         <p>{descA2}</p>
